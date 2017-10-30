@@ -9,9 +9,9 @@
       <th scope="col">Status</th>
       <th scope="col">Reqchanges</th>
       <th scope="col">Reason</th>
-      {{#if this.flag}}
+     
       <th scope="col">Make_change</th>
-      {{/if}}
+      
     </tr>
   </thead>
   <tbody>
@@ -23,12 +23,14 @@
   		<td>{{this.status}}</td>
       <td>{{this.changesreq}}</td>
   		<td>{{this.reason}}</td>
+  	<td>
       {{#if this.flag}}
-      <form action="/users/getapp" method="POST">  
-        <input type="hidden" name="ouid" value={{this._id}}>
-        <td><button class="btn-btn success" value="Make_change" name="changes"></button></td>
-      </form>
+    		  <form action="/users/getapp" method="POST">  
+       			 <input type="hidden" name="ouid" value={{this._id}}>
+       				 <button class="btn btn-info" value="Make_change" name="changes">Change</button>
+     		 </form>
       {{/if}}
+      </td>
 	  </tr>	
 	  {{/each}}
   </tbody>
